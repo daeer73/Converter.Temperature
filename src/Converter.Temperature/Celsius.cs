@@ -127,5 +127,16 @@ namespace Converter.Temperature
 
             return gasTemp;
         }
+
+        public static double CelsiusToRankine(double input)
+        {
+            var rankineTemp = (input + 273.15) * 9 / 5;
+            if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
+            {
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+            }
+
+            return rankineTemp;
+        }
     }
 }

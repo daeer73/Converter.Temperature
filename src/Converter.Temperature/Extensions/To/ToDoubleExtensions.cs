@@ -2,6 +2,7 @@
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
 using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
 
 namespace Converter.Temperature.Extensions.To
 {
@@ -58,6 +59,11 @@ namespace Converter.Temperature.Extensions.To
         public static double ToCelsius(this KelvinDouble input)
         {
             return Kelvin.KelvinToCelsius(input.Temperature);
+        }
+
+        public static double ToCelsius(this RankineDouble input)
+        {
+            return Rankine.RankineToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -212,6 +218,11 @@ namespace Converter.Temperature.Extensions.To
         public static double ToKelvin(this KelvinDouble input)
         {
             return Kelvin.KelvinToKelvin(input.Temperature);
+        }
+
+        public static double ToRankine(this RankineDouble input)
+        {
+            return Celsius.CelsiusToRankine(input.Temperature);
         }
     }
 }
