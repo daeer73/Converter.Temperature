@@ -3,6 +3,7 @@ using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
 using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
 using FluentAssertions;
 using Xunit;
 
@@ -60,6 +61,19 @@ namespace Converter.Temperature.Tests.Extensions.From
 
             // Assert.
             result.Should().BeOfType<KelvinInt>().Which.Temperature.Should().Be(input);
+        }
+
+        [Fact]
+        public void Test_from_rankine_returns_rankine_int_type()
+        {
+            // Arrange.
+            var input = 39;
+
+            // Act.
+            var result = input.FromRankine();
+
+            // Assert.
+            result.Should().BeOfType<RankineInt>().Which.Temperature.Should().Be(input);
         }
     }
 }

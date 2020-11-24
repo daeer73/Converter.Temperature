@@ -5,6 +5,7 @@ using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
 using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
 using FluentAssertions;
 using Xunit;
 
@@ -102,7 +103,21 @@ namespace Converter.Temperature.Tests.Extensions.To
             // Assert.
             result.Should().Be(expected);
         }
-        
+
+        [Fact]
+        public void Test_to_celsius_from_rankine_returns_correct_value()
+        {
+            // Arrange.
+            const double expected = 1.0000000000000062d;
+            var input = new RankineDouble(493.47d);
+
+            // Act.
+            var result = input.ToCelsius();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Fact]
         public void Test_to_fahrenheit_from_celsius_returns_correct_value()
         {
@@ -172,7 +187,21 @@ namespace Converter.Temperature.Tests.Extensions.To
             // Assert.
             result.Should().Be(expected);
         }
-        
+
+        [Fact]
+        public void Test_to_fahrenheit_from_rankine_returns_correct_value()
+        {
+            // Arrange.
+            const double expected = 33.800999999999991d;
+            var input = new RankineDouble(493.471d);
+
+            // Act.
+            var result = input.ToFahrenheit();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Theory]
         [InlineData(80, 0.25d)]
         [InlineData(114, 0.25d)]
@@ -280,7 +309,21 @@ namespace Converter.Temperature.Tests.Extensions.To
             // Assert.
             result.Should().Be(expected);
         }
-        
+
+        [Fact]
+        public void Test_to_gas_from_rankine_returns_correct_value()
+        {
+            // Arrange.
+            const double expected = 3d;
+            var input = new RankineDouble(806.67);
+
+            // Act.
+            var result = input.ToGas();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Fact]
         public void Test_to_kelvin_from_celsius_returns_correct_value()
         {
@@ -349,6 +392,20 @@ namespace Converter.Temperature.Tests.Extensions.To
 
             // Assert.
             result.Should().Be(input.Temperature);
+        }
+
+        [Fact]
+        public void Test_to_kelvin_from_rankine_returns_same_value()
+        {
+            // Arrange.
+            const double expected = 473.1499999999999d;
+            var input = new RankineDouble(851.67);
+
+            // Act.
+            var result = input.ToKelvin();
+
+            // Assert.
+            result.Should().Be(expected);
         }
     }
 }

@@ -56,5 +56,19 @@
             var gasTemp = Celsius.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
+
+        /// <summary>
+        /// The kelvin to rankine conversion.
+        /// </summary>
+        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+        /// <returns>
+        /// The converted temperature.
+        /// </returns>
+        public static double KelvinToRankine(double firstTemp)
+        {
+            var rankineTemp = firstTemp * 9 / 5;
+            return rankineTemp;
+        }
     }
 }

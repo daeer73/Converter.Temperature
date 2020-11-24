@@ -59,6 +59,13 @@ namespace Converter.Temperature.Extensions.From
             return new KelvinDouble(input);
         }
 
+        /// <summary>
+        /// Sets the conversion to be from Rankine.
+        /// </summary>
+        /// <param name="input"> The value that is to be converted. </param>
+        /// <returns>
+        /// The Rankine Double class for the 'To' extension to use.
+        /// </returns>
         public static RankineDouble FromRankine(this double input)
         {
             return new RankineDouble(input);

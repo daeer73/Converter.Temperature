@@ -64,5 +64,19 @@ namespace Converter.Temperature
             var gasTemp = Celsius.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
+
+        /// <summary>
+        /// The fahrenheit to rankine conversion.
+        /// </summary>
+        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <returns>
+        /// The converted temperature.
+        /// </returns>
+        public static double FahrenheitToRankine(double firstTemp)
+        {
+            var rankineTemp = firstTemp + 459.67d;
+            return rankineTemp;
+        }
     }
 }

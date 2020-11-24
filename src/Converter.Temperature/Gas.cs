@@ -115,5 +115,20 @@ namespace Converter.Temperature
 
             return input;
         }
+
+        /// <summary>
+        /// The gas to rankine conversion.
+        /// </summary>
+        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <returns>
+        /// The converted temperature.
+        /// </returns>
+        public static double GasToRankine(double firstTemp)
+        {
+            var celsiusTemp = GasToCelsius(firstTemp);
+            var rankineTemp = Celsius.CelsiusToRankine(celsiusTemp);
+            return rankineTemp;
+        }
     }
 }
