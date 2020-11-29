@@ -5,6 +5,7 @@ using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
 using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
 
 namespace Converter.Temperature.Extensions.To
 {
@@ -74,6 +75,21 @@ namespace Converter.Temperature.Extensions.To
         {
             float.TryParse(
                 Kelvin.KelvinToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                out var convertedTemp);
+            return (float)Math.Round(convertedTemp, 2);
+        }
+
+        /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Celsius <see langword="float"/> result.
+        /// </returns>
+        public static float ToCelsius(this RankineFloat input)
+        {
+            float.TryParse(
+                Rankine.RankineToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return (float)Math.Round(convertedTemp, 2);
         }

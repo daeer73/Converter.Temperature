@@ -300,9 +300,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToRankine(this GasDouble input)
         {
-
-            throw new NotImplementedException("Need to define the Gas To Rankine conversion.");
-            //return Rankine.RankineToGas(input.Temperature);
+            return Gas.GasToRankine(input.Temperature);
         }
 
         /// <summary>
@@ -314,9 +312,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToRankine(this KelvinDouble input)
         {
-
-            throw new NotImplementedException("Need to define the Kelvin To Rankine conversion.");
-            //return Rankine.RankineToGas(input.Temperature);
+            return Kelvin.KelvinToRankine(input.Temperature);
         }
 
         /// <summary>
