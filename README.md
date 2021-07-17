@@ -225,11 +225,6 @@ This time, a FromFahrenheit ToKelvin method.
     var convertedTemp = tempToConvert.FromFahrenheit().ToKelvin();
 ```
 
-## Road Map
+## More Information
 
-I have the code working mostly, but I am going through unit tests to check the code *does actually* work!
-
-1. Add unit tests to prove the code base - done.
-2. Add tests for extremes (edge cases) - in progress.
-3. Add extra error checking for the extremes (edge cases) - in progress.
-4. Add to NuGet - it will then be ready for consumption in other apps.
+For more information on the project and where it is heading, see the [wiki](https://github.com/daeer73/Converter.Temperature/wiki).
